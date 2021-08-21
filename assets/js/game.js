@@ -1,12 +1,17 @@
 
 let playerName = window.prompt("What is your robot's name?");
-console.log(playerName);
-console.log("Our robot's name is " + playerName);
+let playerHealth = 100;
+let playerAttack = 10;
 
-// this creates a function named "fight"
+// You can also log multiple values at once like this
+console.log(playerName, playerAttack, playerHealth);
+
+let enemyName = "Roborto";
+let enemyHealth = 50;
+let enemyAttack = 12;
 
 function fight() {
-    window.alert('The fight has begun!');
-}
+    window.alert("Welcome to Robot Gladiators!");
+};
 
-//fight();
+fight();
