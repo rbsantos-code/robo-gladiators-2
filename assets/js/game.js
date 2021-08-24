@@ -1,3 +1,4 @@
+let playerMoney = 10;
 
 let playerName = window.prompt("What is your robot's name?");
 let playerHealth = 100;
