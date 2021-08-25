@@ -1,22 +1,16 @@
-let playerMoney = 10;
-
 let playerName = window.prompt("What is your robot's name?");
 let playerHealth = 100;
 let playerAttack = 10;
+let playerMoney = 10;
 
 // You can also log multiple values at once like this
 console.log("Character info: ", playerName, playerAttack, playerHealth);
 
 let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
-console.log("enemies", enemyNames);
-for(let i = 0; i < 3; i++) {
-    console.log(enemyNames[i]);
-}
-
 let enemyHealth = 50;
 let enemyAttack = 12;
 
-function fight() {
+function fight(enemyName) {
     window.alert("Welcome to Robot Gladiators!");
 
     // prompt player choice
