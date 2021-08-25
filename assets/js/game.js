@@ -9,9 +9,9 @@ console.log("Character info: ", playerName, playerAttack, playerHealth);
 
 let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 console.log("enemies", enemyNames);
-console.log(enemyNames[0]);
-console.log(enemyNames[1]);
-console.log(enemyNames[2]);
+for(let i = 0; i < 3; i++) {
+    console.log(enemyNames[i]);
+}
 
 let enemyHealth = 50;
 let enemyAttack = 12;
