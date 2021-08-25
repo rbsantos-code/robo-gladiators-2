@@ -7,7 +7,12 @@ let playerAttack = 10;
 // You can also log multiple values at once like this
 console.log("Character info: ", playerName, playerAttack, playerHealth);
 
-let enemyName = "Roborto";
+let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
+console.log("enemies", enemyNames);
+console.log(enemyNames[0]);
+console.log(enemyNames[1]);
+console.log(enemyNames[2]);
+
 let enemyHealth = 50;
 let enemyAttack = 12;
 
@@ -61,7 +66,7 @@ function fight() {
         }
         // if no (false), ask question again by running fight() again
         else {
-            fight();
+            // fight();
         }
     } else {
         window.alert("You need to choose a valid option. Try again!");
@@ -70,4 +75,4 @@ function fight() {
 };
 
 // execute function
-fight();
+// fight();
