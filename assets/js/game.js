@@ -71,5 +71,7 @@ function fight(enemyName) {
 
 // execute function
 for (let i = 0; i < enemyNames.length; i++) {
-    fight(enemyNames[i]);
+    let pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
+    fight(pickedEnemyName);
 }
