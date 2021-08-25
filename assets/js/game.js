@@ -60,7 +60,7 @@ function fight(enemyName) {
         }
         // if no (false), ask question again by running fight() again
         else {
-            // fight();
+            fight();
         }
     } else {
         window.alert("You need to choose a valid option. Try again!");
@@ -69,4 +69,6 @@ function fight(enemyName) {
 };
 
 // execute function
-// fight();
+for (let i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
