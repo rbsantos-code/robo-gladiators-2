@@ -72,6 +72,11 @@ function fight(enemyName) {
 
 // execute function
 for (let i = 0; i < enemyNames.length; i++) {
+
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators!");
+    }
+
     let pickedEnemyName = enemyNames[i];
     enemyHealth = 50;
     fight(pickedEnemyName);
