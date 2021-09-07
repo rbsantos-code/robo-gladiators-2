@@ -91,11 +91,12 @@ function startGame() {
             window.alert("You have lost your robot in battle! Game Over!");
         }
     }
-    startGame();
+    // after the loop ends, player is either out of health or enemies to fight, so run endGame function
+    endGame();
 };
 
 // end game function
-function endgame() {
+function endGame() {
     // if player is still alive, player wins!
     if (playerHealth > 0) {
         window.alert("Great job, you have survived the game! You now have a score of " + playerMoney + ".");
