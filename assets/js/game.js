@@ -105,7 +105,7 @@ function endGame() {
     }
 
     // ask player if they will like to play again
-    let playAgainConfirm = window.confirm("Would you liek to play again?");
+    let playAgainConfirm = window.confirm("Would you like to play again?");
 
     if (playAgainConfirm) {
         // restart game
