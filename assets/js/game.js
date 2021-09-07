@@ -96,7 +96,12 @@ function startGame() {
 
 // end game function
 function endgame() {
-    window.alert("The game has now ended. Let's see how you did!");
+    // if player is still alive, player wins!
+    if (playerHealth > 0) {
+        window.alert("Great job, you have survived the game! You now have a score of " + playerMoney + ".");
+    } else {
+        window.alert("You've lost your robot in battle!");
+    }
 };
 
 // start game when page loads
