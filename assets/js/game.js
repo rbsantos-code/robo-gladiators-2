@@ -72,6 +72,11 @@ function fight(enemyName) {
 
 // execute function
 function startGame() {
+    // reset player stats
+    playerHealth = 100;
+    playerAttack = 10;
+    playerMoney = 10;
+
     for (let i = 0; i < enemyNames.length; i++) {
         if (playerHealth > 0 ) {
             window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
@@ -86,6 +91,13 @@ function startGame() {
             window.alert("You have lost your robot in battle! Game Over!");
         }
     }
+    startGame();
 };
 
+// end game function
+function endgame() {
+    window.alert("The game has now ended. Let's see how you did!");
+};
+
+// start game when page loads
 startGame();
