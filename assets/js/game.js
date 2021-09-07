@@ -102,6 +102,16 @@ function endgame() {
     } else {
         window.alert("You've lost your robot in battle!");
     }
+
+    // ask player if they will like to play again
+    let playAgainConfirm = window.confirm("Would you liek to play again?");
+
+    if (playAgainConfirm) {
+        // restart game
+        startGame();
+    } else {
+        window.alert("Thank you for playing Robot Gladiators! Come back soon!");
+    }
 };
 
 // start game when page loads
