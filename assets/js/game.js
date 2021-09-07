@@ -86,6 +86,17 @@ function startGame() {
             enemyHealth = 50;
 
             fight(pickedEnemyName);
+
+            // if we are not at the last enemy in the array
+            if (playerHealth > 0 && i < enemyNames.length - 1) {
+                // ask if player wants to use the store before next round
+                let storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
+
+                // if yes, take player to the store() function
+                if (storeConfirm) {
+                    shop();
+                }
+            }
         }
         else {
             window.alert("You have lost your robot in battle! Game Over!");
@@ -93,6 +104,7 @@ function startGame() {
     }
     // after the loop ends, player is either out of health or enemies to fight, so run endGame function
     endGame();
+
 };
 
 // end game function
@@ -112,6 +124,42 @@ function endGame() {
         startGame();
     } else {
         window.alert("Thank you for playing Robot Gladiators! Come back soon!");
+    }
+};
+
+function shop() {
+    console.log(playerName + " entered the shop");
+
+    // ask player what they'd like to do
+    let shopOptionPrompt = window.prompt("Would you like to REFILL you health, UPGRADE your attack, or LEAVE the store? Please enter your choice");
+
+    // use switch to carry out action
+    switch (shopOptionPrompt) {
+        case "refill":
+            window.alert("Refilling player's health by 20 for 7 points");
+
+            // increase health and decrease money
+            playerHealth = playerHealth + 20;
+            playerMoney = playerMoney - 7;
+            break;
+        case "upgrade":
+            window.alert("Upgrading player's attack by 6 for 7 points");
+
+            // increase attack and decrease money
+            playerAttack = playerAttack + 6;
+            playerMoney = playerMoney - 7;
+            break;
+        case "leave":
+            window.alert("Leaving the store");
+
+            // do nothing, so function will end
+            break;
+        default:
+            window.alert("You did not pick a valid option. Try again!");
+
+            // call shop() again to force player to pick a valid option
+            shop();
+            break;
     }
 };
 
