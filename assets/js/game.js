@@ -75,6 +75,9 @@ for (let i = 0; i < enemyNames.length; i++) {
 
     if (playerHealth > 0) {
         window.alert("Welcome to Robot Gladiators! Round " + ( i + 1 ) );
+    } else {
+        window.alert("You have lost your robot in battle! Game Over!");
+        break;
     }
 
     // pick new enemy to fight based on the index of the enemyNames array
@@ -85,4 +88,4 @@ for (let i = 0; i < enemyNames.length; i++) {
 
     // pass the pickedEnemyName variable's name into the fight function, where it will assume the value of the enemyName parameter
     fight(pickedEnemyName);
-}
+} 
