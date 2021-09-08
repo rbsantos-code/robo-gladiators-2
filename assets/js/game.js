@@ -83,7 +83,7 @@ function startGame() {
 
             let pickedEnemyName = enemyNames[i];
 
-            enemyHealth = 50;
+            enemyHealth = randomNumber(40, 60);
 
             fight(pickedEnemyName);
 
@@ -173,6 +173,12 @@ function shop() {
             break;
     }
 };
+
+function randomNumber(min, max) {
+    let value = Math.floor(Math.random() * (max - min + 1) + min);
+
+    return value;
+}
 
 // start game when page loads
 startGame();
