@@ -2,7 +2,12 @@ let playerInfo = {
     name: window.prompt("What is your robot's name?"),
     health: 100,
     attack: 10,
-    money: 10
+    money: 10,
+    reset: function() {
+        this.health = 100;
+        this.money = 10;
+        this.attack = 10;
+    }
 };
 
 // You can also log multiple values at once like this
@@ -90,9 +95,7 @@ function fight(enemy) {
 // execute function
 function startGame() {
     // reset player stats
-    playerInfo.health = 100;
-    playerInfo.attack = 10;
-    playerInfo.money = 10;
+    playerInfo.reset();
 
     for (let i = 0; i < enemyInfo.length; i++) {
         if (playerInfo.health > 0 ) {
