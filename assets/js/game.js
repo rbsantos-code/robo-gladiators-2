@@ -39,6 +39,29 @@ let enemyInfo = [
     }
 ];
 
+// fight or skip function
+function fightOrSkip() {
+    // ask player if they'd like to fight or skip using fightOrSkip function
+    const promptFight = window.prompt('Would you like to FIGHT or SKIP this battle?');
+
+    // Enter conditional recursive function call here!
+
+    // if player picks "skip" confirm and then stop the loop
+    if (promptFight === "skip" || promptFight ==="SKIP") {
+        //confirm player wants to skip
+        let confirmSkip = window.confirm("Are you sure you'd like to quit?");
+
+        // if yes (true), leave fight
+        if (confirmSkip) {
+            window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
+            // subtract money from playerMoney for skipping
+            playerInfo.money = playerInfo.money - 10;
+            shop();
+        }
+    }
+}
+
+// fight function 
 function fight(enemy) {
 
     while (playerInfo.health > 0 && enemy.health > 0) {
