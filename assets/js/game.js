@@ -42,7 +42,7 @@ let enemyInfo = [
 // fight or skip function
 function fightOrSkip() {
     // ask player if they'd like to fight or skip using fightOrSkip function
-    const promptFight = window.prompt('Would you like to FIGHT or SKIP this battle?');
+    let promptFight = window.prompt('Would you like to FIGHT or SKIP this battle?');
 
     // Conditional Recursive Function Call
     if (promptFight === "" || promptFight === null) {
@@ -51,7 +51,9 @@ function fightOrSkip() {
     }
 
     // if player picks "skip" confirm and then stop the loop
-    if (promptFight === "skip" || promptFight === "SKIP") {
+    promptFight = promptFight.toLowerCase();
+
+    if (promptFight === "skip") {
         //confirm player wants to skip
         let confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
@@ -59,10 +61,13 @@ function fightOrSkip() {
         if (confirmSkip) {
             window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
             // subtract money from playerMoney for skipping
-            playerInfo.money = playerInfo.money - 10;
-            shop();
+            playerInfo.money = Math.max(0, playerInfo.money - 10);
+            
+            // return true if player wants to leave
+            return true;
         }
     }
+    return false;
 }
 
 // fight function 
@@ -70,7 +75,10 @@ function fight(enemy) {
 
     while (playerInfo.health > 0 && enemy.health > 0) {
         // prompt player choice
-        fightOrSkip();
+        if (fightOrSkip()) {
+            // if true, leave fight by breaking loop
+            break;
+        }
 
         // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
         let damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
