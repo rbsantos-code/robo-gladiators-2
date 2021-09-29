@@ -261,5 +261,16 @@ function randomNumber(min, max) {
     return value;
 }
 
+// End Game function
+function endGame() {
+    window.alert("The game has now ended. Let's see how you did!");
+
+    // check localStorage for high score, if it's not there, use 0
+    let highScore = localStorage.getItem("highscore");
+    if(highScore === null) {
+        highScore = 0;
+    }
+}
+
 // start game when page loads
 startGame();
