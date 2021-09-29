@@ -184,26 +184,6 @@ function startGame() {
 
 };
 
-// end game function
-function endGame() {
-    // if player is still alive, player wins!
-    if (playerInfo.health > 0) {
-        window.alert("Great job, you have survived the game! You now have a score of " + playerInfo.money + ".");
-    } else {
-        window.alert("You've lost your robot in battle!");
-    }
-
-    // ask player if they will like to play again
-    let playAgainConfirm = window.confirm("Would you like to play again?");
-
-    if (playAgainConfirm) {
-        // restart game
-        startGame();
-    } else {
-        window.alert("Thank you for playing Robot Gladiators! Come back soon!");
-    }
-};
-
 // shop functions section 
 function shop() {
     console.log(playerInfo.name + " entered the shop");
