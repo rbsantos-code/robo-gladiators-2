@@ -270,7 +270,26 @@ function endGame() {
     if(highScore === null) {
         highScore = 0;
     }
-}
+
+    // if player has more money than the high score, player has new highscore
+    if (playerInfo.money > highScore) {
+        localStorage.setItem("highscore", playerInfo.money);
+        localStorage.setItem("name", playerInfo.name);
+
+        alert(playerInfo.name + " now has the high score of " + playerInfo.money + " !");
+    } else {
+        alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
+    }
+
+    // ask player if they'd like to play again
+    let playAgainConfirm = window.confirm("Would you like to play again?");
+
+    if (playAgainConfirm) {
+        startGame();
+    } else {
+        window.alert("Thank you for playing Robot Gladiators! Comeback soon!");
+    }
+};
 
 // start game when page loads
 startGame();
